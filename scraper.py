@@ -233,3 +233,13 @@ def repeating_path(path):
                 return True
     return False
 
+def print_statistics():
+    """Print and save current crawler statistics"""
+    print("\nCurrent Crawler Stats:")
+    print(f"Total unique pages visited: {len(tracked_urls)}")
+    print(f"Longest page URL: {max_words_page_url}")
+    print(f"Word count of longest page: {max_words_count}")
+    print("Top 10 words:")
+    for word, count in list(word_frequency.items())[:10]:
+        print(f"{word}: {count}")
+    save_to_output()
