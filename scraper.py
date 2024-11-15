@@ -174,7 +174,7 @@ def scraper(url, resp, unique_pages, word_count_data, longest_url, longest_word_
     i = 0
     while i < len(extracted_links):
         link = extracted_links[i]
-        if validate_url(link):
+        if is_valid(link):
             valid_links.append(link)
         i += 1
     tracked_urls.update(valid_links)
@@ -227,7 +227,7 @@ def extract_next_links(url, resp):
     return extracted_links
 
 
-def validate_url(url):
+def is_valid(url):
     """Check if a URL is valid for crawling"""
     global php_trap_counter, redirect_tracking
 
